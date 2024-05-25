@@ -1,6 +1,8 @@
-using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Web;
+using BuissnesLogic;
+using DataAccess;
+using DataAccess.Repositories;
 using FrontEnd.Data;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +10,15 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddSingleton<WeatherForecastService>();
+builder.Services.AddDbContextFactory<Context>(
+    options => options.UseSqlServer(
+        builder.Configuration.GetConnectionString("DefaultConnection"),
+        providerOptions => providerOptions.EnableRetryOnFailure())
+);
+var config = builder.Configuration;
+builder.Services.AddSingleton<UserRepository>();
+builder.Services.AddSingleton<UserService>();
+
 
 var app = builder.Build();
 
