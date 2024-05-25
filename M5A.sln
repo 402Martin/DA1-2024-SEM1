@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\Da
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrontEnd", "FrontEnd\FrontEnd.csproj", "{09F68565-CC78-47CC-BF5B-3E5541CAA395}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuissnessLogic.tests", "BuissnessLogic.tests\BuissnessLogic.tests.csproj", "{3912C7C6-BE76-4AC1-ADAA-F6C543484D9F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,5 +38,9 @@ Global
 		{09F68565-CC78-47CC-BF5B-3E5541CAA395}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{09F68565-CC78-47CC-BF5B-3E5541CAA395}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{09F68565-CC78-47CC-BF5B-3E5541CAA395}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3912C7C6-BE76-4AC1-ADAA-F6C543484D9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3912C7C6-BE76-4AC1-ADAA-F6C543484D9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3912C7C6-BE76-4AC1-ADAA-F6C543484D9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3912C7C6-BE76-4AC1-ADAA-F6C543484D9F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
