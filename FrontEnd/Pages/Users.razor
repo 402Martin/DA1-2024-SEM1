@@ -1,0 +1,51 @@
+@page "/users"
+@using FrontEnd.Data
+@using BuissnesLogic.Dtos
+@inject UserController UserController
+@inject NavigationManager NavigationManager
+
+<h3>User List</h3>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Email</th>
+        <th>Name</th>
+        <th>Surname</th>
+    </tr>
+    </thead>
+    <tbody>
+    @if (users == null)
+    {
+        <tr>
+            <td colspan="3">Loading...</td>
+        </tr>
+    }
+    else
+    {
+        @foreach (var user in users)
+        {
+            <tr>
+                <td>@user.Email</td>
+                <td>@user.Name</td>
+                <td>@user.Surname</td>
+            </tr>
+        }
+    }
+    </tbody>
+</table>
+<button class="btn btn-primary" @onclick="NavigateToAddUsers">Add Users</button>
+@code {
+    private List<UserDto> users;
+
+    protected override void OnInitialized()
+    {
+        users = UserController.GetAll();
+    }
+
+    public void NavigateToAddUsers()
+    {
+        NavigationManager.NavigateTo("/users/add");
+    }
+    
+}

@@ -18,4 +18,10 @@ public class UserRepository
         context.SaveChanges();
         return user.Entity;
     }
+    public List<User> GetAll()
+    {
+        using var context = _contextFactory.CreateDbContext();
+        var users = context.Users.ToList();
+        return users;
+    }
 }

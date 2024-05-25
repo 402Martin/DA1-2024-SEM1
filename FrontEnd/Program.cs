@@ -15,9 +15,9 @@ builder.Services.AddDbContextFactory<Context>(
         builder.Configuration.GetConnectionString("DefaultConnection"),
         providerOptions => providerOptions.EnableRetryOnFailure())
 );
-var config = builder.Configuration;
 builder.Services.AddSingleton<UserRepository>();
 builder.Services.AddSingleton<UserService>();
+builder.Services.AddSingleton<UserController>();
 
 
 var app = builder.Build();

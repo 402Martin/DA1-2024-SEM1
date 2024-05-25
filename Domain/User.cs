@@ -15,6 +15,6 @@ public class User
     [MaxLength(30)]
     public string Surname { get; set; }    
     
-    public ICollection<Note> Notes { get; set; }
+    public ICollection<Note>? Notes { get; set; }
 
 }
