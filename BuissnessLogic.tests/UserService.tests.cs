@@ -2,7 +2,6 @@ using BuissnesLogic;
 using BuissnesLogic.Dtos;
 using DataAccess;
 using DataAccess.Repositories;
-using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 

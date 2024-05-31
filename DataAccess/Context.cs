@@ -12,8 +12,8 @@ public class Context : DbContext{
             .OfType<Microsoft.EntityFrameworkCore.Infrastructure.RelationalOptionsExtension>()
             .FirstOrDefault();
         
-        var databaseType = relationalOptionsExtension.Connection.GetType().Name;
-        if( databaseType.Contains("Sqlite"))
+        var databaseType = relationalOptionsExtension?.Connection?.GetType().Name;
+        if( databaseType != null && databaseType.Contains("Sqlite"))
             this.Database.EnsureCreated();
         else
             this.Database.Migrate();
